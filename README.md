@@ -7,14 +7,35 @@ Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introdu
 Make sure to install the dependencies:
 
 ```bash
-# npm
-npm install
-
-# pnpm
-pnpm install
-
-# yarn
 yarn install
+```
+
+## Add GraphQL and Hygraph connections
+
+Install `nuxt-graphql-client`
+
+```bash
+yarn add nuxt-graphql-client
+```
+
+in .env add
+
+```
+GQL_HOST=https://<HYGRAPH_CDN_LOCATION>.cdn.hygraph.com/content/<ID>/master
+```
+
+In Nuxt Config add
+
+```js
+export default defineNuxtConfig({
+  modules: ["nuxt-graphql-client"],
+});
+```
+
+Add `.gql` query files in the `./queries` folder and use them like this:
+
+```js
+const { data } = await useAsyncGql("<QUERY_NAME>", { foo: "bar" });
 ```
 
 ## Development Server
@@ -22,13 +43,6 @@ yarn install
 Start the development server on `http://localhost:3000`:
 
 ```bash
-# npm
-npm run dev
-
-# pnpm
-pnpm run dev
-
-# yarn
 yarn dev
 ```
 
@@ -37,27 +51,7 @@ yarn dev
 Build the application for production:
 
 ```bash
-# npm
-npm run build
-
-# pnpm
-pnpm run build
-
-# yarn
 yarn build
-```
-
-Locally preview production build:
-
-```bash
-# npm
-npm run preview
-
-# pnpm
-pnpm run preview
-
-# yarn
-yarn preview
 ```
 
 Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
