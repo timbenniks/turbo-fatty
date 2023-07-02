@@ -18,7 +18,7 @@ Install `nuxt-graphql-client`
 yarn add nuxt-graphql-client
 ```
 
-in .env add
+In `.env` add and make sure to add content viewing permissions in Hygraph API settings
 
 ```
 GQL_HOST=https://<HYGRAPH_CDN_LOCATION>.cdn.hygraph.com/content/<ID>/master
