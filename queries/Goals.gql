@@ -1,0 +1,12 @@
+query goals {
+  goals {
+    id
+    title
+    startDate
+    endingDate
+    startingWeight
+    goalWeight
+    height
+    age
+  }
+}

@@ -1,0 +1,26 @@
+query datasets {
+  dataSets {
+    id
+    date
+    weight
+    steps
+    moveCalories
+    distanceMoved
+    workedOut
+    image {
+      width
+      height
+      fileName
+    }
+    goal {
+      id
+      title
+      startDate
+      endingDate
+      startingWeight
+      height
+      age
+      goalWeight
+    }
+  }
+}
